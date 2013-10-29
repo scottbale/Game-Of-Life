@@ -1,3 +1,7 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
 /**
 	Main Class, only offers tutorial and sends user on its way	
 */
