@@ -95,39 +95,14 @@ class Viewer extends JFrame{
 		stepButton.setActionCommand("stepGame");       
 		grid = new MapComponent(this);
 		
-		/**
-			ButtonMole implements Actionlister
-			Works for the two buttons
-			Is an inner class so it can call grid directly
-		*/
-      class ButtonMole implements ActionListener{
-			public void actionPerformed(ActionEvent e){
-				//System.out.println(e.getActionCommand());
-				if(e.getActionCommand().equals("stepGame")){
-					grid.update();
-					grid.repaint();
-				}
-				if(e.getActionCommand().equals("jumpGame")){
-					int gens = Integer.parseInt(JOptionPane.showInputDialog(new String("How many generations?")));
-					try{
-						for(int i =0;i<gens;i++){
-							//System.out.print(i);
-							grid.update(false);
-						}
-					}catch(Exception ex){
-							System.out.println("Exception");
-					}finally{
-						grid.repaint();
-					}
-				}
-			}
-		}
+
 		//defines properties for the buttons
 		jumpButton.addActionListener(new ButtonMole());
 		stepButton.addActionListener(new ButtonMole());	
-      //Surrenders Control to the KeyBoard
-      jumpButton.setFocusable(false);
-      stepButton.setFocusable(false);
+	      
+	      	//Surrenders Control to the KeyBoard
+	      	jumpButton.setFocusable(false);
+	      	stepButton.setFocusable(false);
                 
 		mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.X_AXIS));
 		mainPanel.setBorder(BorderFactory.createEtchedBorder());
