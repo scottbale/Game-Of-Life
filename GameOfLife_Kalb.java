@@ -37,4 +37,5 @@ public class GameOfLife_Kalb{
 		for(String line: steps){
 			JOptionPane.showMessageDialog(null, line);
 		}
+        }
 }
